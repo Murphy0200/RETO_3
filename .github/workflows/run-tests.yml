@@ -1,27 +1,30 @@
-name: Run API Tests
+name: Run Playwright + Cucumber Tests
 
 on:
   push:
     branches:
-      - main         
-      - master       
-  workflow_dispatch:  
+      - main
+      - master
+  workflow_dispatch:
 
 jobs:
   test:
-    runs-on: ubuntu-latest   
+    runs-on: ubuntu-latest
+
     steps:
-  
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '22.20.0'  
+          node-version: 20 
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Cucumber tests
         run: npm test

@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "cucumber-js test/features --require-module ts-node/register --import test/steps/*.ts"
+    
+    "test": "npx cucumber-js test/features --require-module ts-node/register --import test/steps/*.ts"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.0.1",
