@@ -15,10 +15,15 @@ let browser: Browser;
 let page: Page;
 
 Before(async function () {
-    browser = await chromium.launch({ headless: false, slowMo: 500 });
+    const isCI = process.env.CI === 'true'; 
+    browser = await chromium.launch({
+        headless: isCI, 
+        slowMo: isCI ? 0 : 500 
+    });
     const context = await browser.newContext();
     page = await context.newPage();
 });
+
 
 After(async function () {
     await browser.close();
