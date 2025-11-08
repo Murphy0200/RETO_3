@@ -1,0 +1,23 @@
+{
+  "name": "reto_3",
+  "version": "1.0.0",
+  "description": "Reto de automatización QA - SauceDemo y API DummyJSON",
+  "main": "index.js",
+
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "node-fetch": "^3.3.2"
+  },
+  
+  "type": "module",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 15000
+  }
+}
+
+
+
