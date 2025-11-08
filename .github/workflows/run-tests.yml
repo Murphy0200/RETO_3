@@ -1,11 +1,13 @@
-name: Run Playwright + Cucumber Tests
+name: Run UI Tests with Cucumber + Playwright
 
 on:
   push:
     branches:
       - main
-      - master
-  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:  # Permite ejecutarlo manualmente desde GitHub
 
 jobs:
   test:
@@ -18,15 +20,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 
+          node-version: '22'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
       - name: Run Cucumber tests
         run: npx cucumber-js test/features --require-module ts-node/register --require test/steps/**/*.ts
-
-
+        env:
+          CI: true
