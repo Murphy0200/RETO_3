@@ -1,33 +1,27 @@
 name: Run API Tests
 
-# 1️⃣ Activadores del workflow
 on:
   push:
     branches:
-      - main          # se ejecuta al hacer push a main
-      - master        # si tu rama principal se llama master
-  workflow_dispatch:   # permite ejecutar manualmente desde la UI
+      - main         
+      - master       
+  workflow_dispatch:  
 
-# 2️⃣ Definir el job
 jobs:
   test:
-    runs-on: ubuntu-latest   # Sistema operativo donde se ejecuta
-
+    runs-on: ubuntu-latest   
     steps:
-      # Paso 1: Clonar el repositorio
+  
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Paso 2: Instalar Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22.20.0'  
 
-      # Paso 3: Instalar dependencias
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Ejecutar pruebas
       - name: Run tests
         run: npm test

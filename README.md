@@ -1,14 +1,20 @@
-# Reto Práctico #1 - Fundamentos QA para la Automatización
+# reto_3
 
-## 🧩 Estructura del Proyecto
-Proyecto desarrollado con patrón **Screenplay** y pruebas **BDD** con **Cucumber**.
+Este proyecto realiza pruebas automatizadas de **aplicaciones y APIs** usando **Cucumber (BDD)** y **Jest**.
 
-### 📁 Carpetas
-- **features/** → Escenarios BDD en formato Gherkin.
-- **steps/** → Definiciones de pasos.
-- **tasks/** → Acciones principales del usuario.
-- **questions/** → Validaciones.
-- **models/** → Datos y estructuras usadas.
-- **.env** → Configuración del entorno (credenciales).
+## Instalación
 
-### 🔧 Configuración del entorno
+Instala las dependencias ejecutando:
+
+```bash
+npm install
+
+Ejecutar pruebas
+
+1 Pruebas BDD (Cucumber)
+
+npx cucumber-js
+
+2 Pruebas de API (Jest)
+
+npm test

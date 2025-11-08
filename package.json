@@ -1,23 +1,13 @@
 {
-  "name": "reto_3",
-  "version": "1.0.0",
-  "description": "Reto de automatización QA - SauceDemo y API DummyJSON",
-  "main": "index.js",
-
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "node-fetch": "^3.3.2"
-  },
-  
-  "type": "module",
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "cucumber-js test/features --require-module ts-node/register --import test/steps/*.ts"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "testTimeout": 15000
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "@playwright/test": "^1.48.0",
+    "@swc/core": "^1.15.1",
+    "@swc/helpers": "^0.5.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
   }
 }
-
-
-
