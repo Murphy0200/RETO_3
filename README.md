@@ -24,6 +24,7 @@ Instala las dependencias del proyecto:
 
 ```bash
 npm ci
+```bash
 
 Ejecución de pruebas
 1. Ejecutar todos los tests (UI + API) y generar reportes
