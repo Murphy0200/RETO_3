@@ -44,8 +44,8 @@ Generar el reporte HTML de API en: reports/api/index.html
 
 2. Ejecutar solo UI
 
-`npm run test:ui      # Ejecuta los tests UI'
-`npm run report:html  # Genera el reporte HTML UI'
+`npm run test:ui      # Ejecuta los tests UI
+npm run report:html  # Genera el reporte HTML UI'
 
 Reporte generado: reports/cucumber_report.html
 
