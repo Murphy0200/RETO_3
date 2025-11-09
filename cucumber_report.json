@@ -1,0 +1,250 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "flujo-de-autenticación-y-compra-en-saucedemo;inicio-de-sesión-exitoso-y-compra-de-un-producto-(camino-feliz)",
+        "keyword": "Escenario",
+        "line": 4,
+        "name": "Inicio de sesión exitoso y compra de un producto (Camino feliz)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 842735234
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 5,
+            "name": "que el usuario está en la página de inicio de sesión",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 310855916
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Cuando ",
+            "line": 6,
+            "name": "inicia sesión con usuario \"standard_user\" y contraseña \"secret_sauce\"",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 135364739
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 7,
+            "name": "agrega el producto \"Sauce Labs Backpack\" al carrito",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80616766
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 8,
+            "name": "completa el proceso de compra con nombre \"Laura\", apellido \"García\" y código postal \"110111\"",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 131347270
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 9,
+            "name": "debería ver el mensaje \"Thank you for your order!\"",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4052108
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 32154974
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "flujo-de-autenticación-y-compra-en-saucedemo;inicio-de-sesión-fallido-con-credenciales-inválidas",
+        "keyword": "Escenario",
+        "line": 11,
+        "name": "Inicio de sesión fallido con credenciales inválidas",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 90681256
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 12,
+            "name": "que el usuario está en la página de inicio de sesión",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 216838458
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Cuando ",
+            "line": 13,
+            "name": "inicia sesión con usuario \"locked_out_user\" y contraseña \"secret_sauce\"",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80632585
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 14,
+            "name": "debería ver el mensaje de error \"Sorry, this user has been locked out.\"",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3699039
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 22787138
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "flujo-de-autenticación-y-compra-en-saucedemo;ordenar-productos-por-menor-precio",
+        "keyword": "Escenario",
+        "line": 16,
+        "name": "Ordenar productos por menor precio",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 74006290
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 17,
+            "name": "que el usuario está en la página de inicio de sesión",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 213924699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Cuando ",
+            "line": 18,
+            "name": "inicia sesión con usuario \"standard_user\" y contraseña \"secret_sauce\"",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 95852281
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Y ",
+            "line": 19,
+            "name": "ordena los productos por \"Price (low to high)\"",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29174524
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Entonces ",
+            "line": 20,
+            "name": "el primer producto mostrado debería tener el precio más bajo",
+            "match": {
+              "location": "test/steps/flujo.steps.ts:71"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3129205
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 25199287
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "flujo-de-autenticación-y-compra-en-saucedemo",
+    "line": 2,
+    "keyword": "Característica",
+    "name": "Flujo de autenticación y compra en SauceDemo",
+    "tags": [],
+    "uri": "test/features/flujo_sauce.feature"
+  }
+]
