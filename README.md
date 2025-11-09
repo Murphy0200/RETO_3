@@ -11,11 +11,14 @@ Incluye:
 
 ## Requisitos
 
-Antes de ejecutar el proyecto, asegúrate de tener instalado:
+Antes de ejecutar el proyecto, tener instalado:
 
 - **Node.js** ≥ 22  
 - **npm** ≥ 10  
-- Git (opcional, si quieres clonar el repositorio)  
+- Git 
+- Typescrit
+- Cucumber 
+- Playwright 
 
 Instala las dependencias del proyecto:
 
