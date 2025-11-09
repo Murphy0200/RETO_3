@@ -22,9 +22,17 @@ Antes de ejecutar el proyecto, tener instalado:
 
 Instala las dependencias del proyecto:
 
+
+
+El problema es que estás abriendo el bloque con tres comillas invertidas (```) pero no lo cierras correctamente.
+
+```markdown
+Instala las dependencias del proyecto:
+
 ```bash
 npm ci
-```bash
+
+
 
 Ejecución de pruebas
 1. Ejecutar todos los tests (UI + API) y generar reportes
