@@ -30,7 +30,7 @@ Instala las dependencias del proyecto:
 Ejecución de pruebas
 1. Ejecutar todos los tests (UI + API) y generar reportes
 
-npm run test:all
+`npm run test:all`
 
 Esto hará:
 
@@ -44,14 +44,14 @@ Generar el reporte HTML de API en: reports/api/index.html
 
 2. Ejecutar solo UI
 
-npm run test:ui      # Ejecuta los tests UI
-npm run report:html  # Genera el reporte HTML UI
+`npm run test:ui      # Ejecuta los tests UI'
+`npm run report:html  # Genera el reporte HTML UI'
 
 Reporte generado: reports/cucumber_report.html
 
 3. Ejecutar solo API
 
-npm run test:api
+`npm run test:api`
 
 Reporte generado: reports/api/index.html
 
