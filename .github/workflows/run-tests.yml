@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:  # Permite ejecutarlo manualmente desde GitHub
+  workflow_dispatch:
 
 jobs:
   test:
@@ -29,6 +29,33 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Cucumber tests
-        run: npx cucumber-js test/features --require-module ts-node/register --require test/steps/**/*.ts
+        run: npx cucumber-js test/features --require-module ts-node/register --require test/steps/**/*.ts --format json:reports/cucumber_report.json
         env:
           CI: true
+
+      - name: Generate Cucumber HTML Report
+        run: |
+          node -e "
+          const reporter = require('cucumber-html-reporter');
+          reporter.generate({
+            theme: 'bootstrap',
+            jsonFile: 'reports/cucumber_report.json',
+            output: 'reports/cucumber_report.html',
+            reportSuiteAsScenarios: true,
+            launchReport: false,
+            metadata: {
+              'App Version': '1.0.0',
+              'Test Environment': 'CI',
+              'Browser': 'Playwright',
+              'Platform': 'Linux',
+              'Executed': 'GitHub Actions'
+            }
+          });
+          "
+
+      - name: Deploy HTML Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: reports
+          publish_branch: gh-pages

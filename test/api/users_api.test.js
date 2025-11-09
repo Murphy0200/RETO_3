@@ -1,4 +1,7 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
+const { describe, test, expect } = require("@jest/globals");
+
+
 
 
 describe("Pruebas de flujo completo - DummyJSON Users", () => {
