@@ -5,7 +5,8 @@
     "test:ui": "npx cucumber-js test/features --require-module ts-node/register --require test/steps/**/*.ts --format json:reports/cucumber_report.json",
     "report:html": "node generate-report.js",
     "test:api": "jest --config jest.config.js",
-    "test:all": "npm run test:ui && npm run report:html && npm run test:api"
+    "test:all": "npm run test:ui && npm run report:html && npm run test:api",
+    "open:reports": "xdg-open reports/cucumber_report.html && xdg-open reports/api/index.html"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
@@ -21,3 +22,6 @@
     "node-fetch": "^2.6.12"
   }
 }
+
+
+
